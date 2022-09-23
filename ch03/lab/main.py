@@ -1,8 +1,6 @@
 import turtle #1. import modules
 import random
 import pygame
-import sys
-from pygame.locals import QUIT
 import math
 
 #Part A
@@ -45,15 +43,20 @@ pygame.init()
 window = pygame.display.set_mode()
 
 coords=[]
-num_sides=5
-side_length=20
-offset=50
+num_sides=3
+side_length=50
+offset=100
+backcolor=(0,100,100)
+shapecolor=(0,150,200)
 
-for i in range(num_sides):
-  theta=2*math.pi*i/num_sides
-  x=side_length*math.cos(theta)+offset
-  y=side_length*math.sin(theta)+offset
-  coords.append([x,y])
-pygame.draw.polygon(window,(0,0,255),coords)
-pygame.display.flip()
-pygame.time.wait()
+for num_sides in [3,4,6,9,360]:
+  for i in range(num_sides):
+    theta=2*math.pi*i/num_sides
+    x=side_length*math.cos(theta)+offset
+    y=side_length*math.sin(theta)+offset
+    coords.append([x,y])
+  window.fill(backcolor)
+  pygame.draw.polygon(window,shapecolor,coords)
+  coords.clear()
+  pygame.display.flip()
+  pygame.time.wait(1000)
