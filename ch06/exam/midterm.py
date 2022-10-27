@@ -1,12 +1,32 @@
 import turtle
 import random
 
-def move(tur,x,y):
+def move(tur,x=0,y=0):
+  '''
+  Moves the turtle to another location without leaving a trail.
+  args:
+    tur(turtle): the turtle object being moved
+    x(int): the turtle's desired x location
+    y(int): the turtle's desired y location
+  returns:
+    None
+  '''
   tur.up()
   tur.goto(x,y)
   tur.down()
 
-def drawcloud(tur,x,y,color,radius):
+def drawcloud(tur,x=0,y=0,color="white",radius=10):
+  '''
+  Draws a randomly generated cloud with the bottom right corner at (x,y).
+  args:
+    tur(turtle): the turtle object being moved
+    x(int): the cloud's rightmost coordinate
+    y(int): the cloud's bottommost coordinate
+    color(str or tuple): the cloud's color
+    radius(int): the radius of the cloud's "puffs"
+  returns:
+    None
+  '''
   tur.up()
   tur.goto(x,y)
   tur.down()
@@ -34,6 +54,9 @@ def main():
   sunradius=15
   cloudcolor="white"
   cloudradius=7
+  cloudloc1=(0,60)
+  cloudloc2=(-150,10)
+  cloudloc3=(150,-10)
   window=turtle.Screen()
   maxxcoord=window.screensize()[0]/2
   maxycoord=window.screensize()[1]/2
@@ -50,10 +73,9 @@ def main():
   turtboy.color(suncolor)
   turtboy.circle(sunradius)
   #draw clouds
-  drawcloud(turtboy,0,60,cloudcolor,cloudradius)
-  drawcloud(turtboy,-150,10,cloudcolor,cloudradius)
-  drawcloud(turtboy,150,-10,cloudcolor,cloudradius)
+  drawcloud(turtboy,cloudloc1[0],cloudloc1[1],cloudcolor,cloudradius)
+  drawcloud(turtboy,cloudloc2[0],cloudloc2[1],cloudcolor,cloudradius)
+  drawcloud(turtboy,cloudloc3[0],cloudloc3[1],cloudcolor,cloudradius)
   window.exitonclick()
 
 main()
-#things so far-- turtle seth, circle
