@@ -8,7 +8,7 @@ class StringUtility():
     args:
       self.string(str)
     returns:
-      str
+      self.string(str)
     '''
     return self.string
 
@@ -18,7 +18,7 @@ class StringUtility():
     args:
       self.string(str)
     returns:
-      str
+      vowelcount(str)
     '''
     vowels="AEIOUaeiou"
     vowelcount=0
@@ -63,12 +63,13 @@ class StringUtility():
     args:
       self.string(str)
     returns:
-      int
+      sum(int)
     '''
     sum=0
     for i in range(len(self.string)):
-      sum=sum+ord(self.string[i])
+      sum=sum+ ord(self.string[i])
     return sum
+  
   def cipher(self):
     '''
     Encodes the string using a Caesar cipher, with a shift equal to the length of the string.
