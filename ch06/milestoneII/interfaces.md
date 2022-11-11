@@ -23,12 +23,42 @@ Come up with interfaces fot 3 possible classes you think you may need. Again, br
 
 ## Class Interface 1
 
-< add your interface >
+class Player:
+  attributes:
+    x
+    y
+    image
+    health
+    inventory
+  methods:
+    left()
+    right()
+    jump()
+    update_inventory()
+    takedamage()
+    gethealth()
+    attack()
 
 ## Class Interface 2
 
-< add your interface >
+class Bear:
+  attributes:
+    x
+    y
+    health
+  methods:
+    left()
+    right()
+    takedamage()
+    attack()
 
 ## Class Interface 3
 
-< add your interface >
+class Loot:
+  attributes:
+    x
+    y
+    image
+    type
+  methods:
+    getcollected()
